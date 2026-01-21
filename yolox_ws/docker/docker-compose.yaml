@@ -1,0 +1,28 @@
+#version: '3.4'
+services:
+    yolox_ros_onnx_graspnet:
+        container_name: yolox_ros_onnx_graspnet
+        privileged: true
+        build:
+            # context: .
+            context: ..
+            dockerfile: docker/Dockerfile
+            args:
+                - BASE_TAG=11.8.0-cudnn8-devel-ubuntu22.04
+        image: yolox_ros_onnx_graspnet:latest
+        network_mode: host
+        runtime: nvidia
+        environment:
+            - DISPLAY=$DISPLAY
+            - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+            # - CYCLONEDDS_URI=file:///root/ros2_ws/docker/cyclonedds_profile.xml
+            - ROS_DOMAIN_ID=100
+            - TZ=Asia/Tokyo
+        volumes:
+            - ../:/root/ros2_ws
+            - /tmp/.X11-unix:/tmp/.X11-unix
+        devices:
+            - "/dev/video0:/dev/video0"
+        working_dir: /root/ros2_ws
+        tty: true
+        command: bash

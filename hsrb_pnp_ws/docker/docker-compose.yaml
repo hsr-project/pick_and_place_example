@@ -1,0 +1,23 @@
+services:
+    hsrb_pick_and_place:
+        container_name: hsrb_pick_and_place
+        privileged: true
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile   # added
+        image: hsrb_pick_and_place:latest
+        network_mode: host
+        runtime: nvidia
+        environment:
+            - DISPLAY=$DISPLAY
+            - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+            - ROS_DOMAIN_ID=100
+            - IGN_GAZEBO_RESOURCE_PATH=/workdir/src/hsrb_pnp_pkgs/hsrb_pick_and_place/models/
+        volumes:
+            - ../:/home/hsrb/ros2_ws
+            - /tmp/.X11-unix:/tmp/.X11-unix
+        devices:
+            - "/dev/video0:/dev/video0"
+        working_dir: /home/hsrb/ros2_ws
+        tty: true
+        command: bash

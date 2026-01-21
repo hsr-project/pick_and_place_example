@@ -1,0 +1,34 @@
+<package format="3">
+  <name>hsrb_pick_and_place</name>
+  <version>2.0.0</version>
+  <description>ROS 2 package for pick and place operations using the HSR robot, providing interfaces and utilities for object manipulation tasks</description>
+  <maintainer email="xr-hsr-support@mail.toyota.co.jp">HSR Support</maintainer>
+  <license>BSD 3-clause Clear License</license>
+
+  <depend>hsrb_gazebo_bringup</depend>
+  <depend>hsrb_gazebo_launch</depend>
+  <depend>hsrb_moveit_config</depend>
+  <depend>hsrb_common_launch</depend>
+  <depend>hsrb_interface_py</depend>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2_ros</depend>
+  
+  <depend>graspnet_ros_msgs</depend>
+
+  <depend>scipy</depend>
+  <depend>numpy</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

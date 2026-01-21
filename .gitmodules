@@ -1,0 +1,161 @@
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/csm"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/csm
+	url = https://github.com/AlexKaravaev/csm.git
+	branch = ros2_csm_eigen
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/dynpick_driver"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/dynpick_driver
+	url = https://github.com/hsr-project/dynpick_driver.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/exxx_control_table"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/exxx_control_table
+	url = https://github.com/hsr-project/exxx_control_table.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/gazebo_ros2_control"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/gazebo_ros2_control
+	url = https://github.com/hsr-project/gazebo_ros2_control.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/graspnet_ros"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/graspnet_ros
+	url = https://github.com/hsr-project/graspnet_ros.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/gz_ros2_control"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/gz_ros2_control
+	url = https://github.com/ros-controls/gz_ros2_control.git
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsr_common"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsr_common
+	url = https://github.com/hsr-project/hsr_common.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_common"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_common
+	url = https://github.com/hsr-project/hsrb_common.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_control"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_control
+	url = https://github.com/hsr-project/hsrb_control.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_controllers"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_controllers
+	url = https://github.com/hsr-project/hsrb_controllers.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_drivers"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_drivers
+	url = https://github.com/hsr-project/hsrb_drivers.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_interfaces"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_interfaces
+	url = https://github.com/hsr-project/hsrb_interfaces.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_launch"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_launch
+	url = https://github.com/hsr-project/hsrb_launch.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_manipulation"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_manipulation
+	url = https://github.com/hsr-project/hsrb_manipulation.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_monitor"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_monitor
+	url = https://github.com/hsr-project/hsrb_monitor.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_moveit"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_moveit
+	url = https://github.com/hsr-project/hsrb_moveit.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_robot"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_robot
+	url = https://github.com/hsr-project/hsrb_robot.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_rosnav"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_rosnav
+	url = https://github.com/hsr-project/hsrb_rosnav.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_simulator"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_simulator
+	url = https://github.com/hsr-project/hsrb_simulator.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_teleop"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/hsrb_teleop
+	url = https://github.com/hsr-project/hsrb_teleop.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/ros2_laser_scan_matcher"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/ros2_laser_scan_matcher
+	url = https://github.com/AlexKaravaev/ros2_laser_scan_matcher.git
+	branch = main
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_common"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_common
+	url = https://github.com/hsr-project/tmc_common.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_common_msgs"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_common_msgs
+	url = https://github.com/hsr-project/tmc_common_msgs.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_database"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_database
+	url = https://github.com/hsr-project/tmc_database.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_drivers"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_drivers
+	url = https://github.com/hsr-project/tmc_drivers.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_gazebo"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_gazebo
+	url = https://github.com/hsr-project/tmc_gazebo.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation
+	url = https://github.com/hsr-project/tmc_manipulation.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation_base"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation_base
+	url = https://github.com/hsr-project/tmc_manipulation_base.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation_planner"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_manipulation_planner
+	url = https://github.com/hsr-project/tmc_manipulation_planner.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_navigation"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_navigation
+	url = https://github.com/hsr-project/tmc_navigation.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_realtime_control"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_realtime_control
+	url = https://github.com/hsr-project/tmc_realtime_control.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_teleop"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_teleop
+	url = https://github.com/hsr-project/tmc_teleop.git
+	branch = humble
+[submodule "hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_voice"]
+	path = hsrb_pnp_ws/src/hsr_repos_ignition_humble/tmc_voice
+	url = https://github.com/hsr-project/tmc_voice.git
+	branch = humble
+[submodule "yolox_ws/src/graspnetAPI"]
+	path = yolox_ws/src/graspnetAPI
+	url = https://github.com/graspnet/graspnetAPI
+[submodule "yolox_ws/src/graspnet-baseline"]
+	path = yolox_ws/src/graspnet-baseline
+	url = https://github.com/graspnet/graspnet-baseline
+[submodule "yolox_ws/src/YOLOX-ROS"]
+	path = yolox_ws/src/YOLOX-ROS
+	url = https://github.com/Ar-Ray-code/YOLOX-ROS
+	branch = humble
+[submodule "yolox_ws/src/compressed_rgbd_msgs"]
+	path = yolox_ws/src/compressed_rgbd_msgs
+	url = https://github.com/hsr-project/compressed_rgbd_msgs.git
+	branch = humble
+[submodule "yolox_ws/src/coordinate_transform_util_ros"]
+	path = yolox_ws/src/coordinate_transform_util_ros
+	url = https://github.com/hsr-project/coordinate_transform_util_ros.git
+	branch = main
+[submodule "yolox_ws/src/cv_bridge_util"]
+	path = yolox_ws/src/cv_bridge_util
+	url = https://github.com/hsr-project/cv_bridge_util.git
+	branch = humble
+[submodule "yolox_ws/src/graspnet_ros"]
+	path = yolox_ws/src/graspnet_ros
+	url = https://github.com/hsr-project/graspnet_ros.git
+	branch = humble
+[submodule "yolox_ws/src/instance_segmentation_msgs"]
+	path = yolox_ws/src/instance_segmentation_msgs
+	url = https://github.com/hsr-project/instance_segmentation_msgs.git
+	branch = humble

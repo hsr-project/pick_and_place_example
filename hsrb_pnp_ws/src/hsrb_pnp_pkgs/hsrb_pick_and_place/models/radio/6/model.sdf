@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<sdf version="1.6">
+    <model name="Radio">
+        <static>true</static>
+        <link name="link">
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/radio/6/files/meshes/Radio.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/radio/6/files/meshes/Radio.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <light name="light_source" type="point">
+                <pose>0.0137 -0.02 0.109 0 0 0</pose>
+                <attenuation>
+                    <range>2.0</range>
+                    <constant>0.2</constant>
+                    <linear>0.10</linear>
+                    <quadratic>0.1</quadratic>
+                </attenuation>
+                <diffuse>1 0 0 1</diffuse>
+                <specular>1 0 0 1</specular>
+            </light>
+        </link>
+    </model>
+</sdf>

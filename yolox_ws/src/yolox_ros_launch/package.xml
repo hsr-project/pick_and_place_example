@@ -1,0 +1,15 @@
+<package format="3">
+  <name>yolox_ros_launch</name>
+  <version>2.0.0</version>
+  <description>YOLOX-ROS launch files</description>
+  <maintainer email="xr-hsr-support@mail.toyota.co.jp">HSR Support</maintainer>
+  <license>BSD 3-clause Clear License</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>yolox_ros_cpp</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
