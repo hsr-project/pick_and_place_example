@@ -11,7 +11,8 @@ services:
         environment:
             - DISPLAY=$DISPLAY
             - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-            - ROS_DOMAIN_ID=100
+            # - CYCLONEDDS_URI=/home/hsrb/ros2_ws/docker/cyclonedds_profile.xml
+            - ROS_DOMAIN_ID=XXX
             - IGN_GAZEBO_RESOURCE_PATH=/workdir/src/hsrb_pnp_pkgs/hsrb_pick_and_place/models/
         volumes:
             - ../:/home/hsrb/ros2_ws
