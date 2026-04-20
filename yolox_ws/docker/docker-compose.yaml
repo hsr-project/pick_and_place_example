@@ -15,8 +15,8 @@ services:
         environment:
             - DISPLAY=$DISPLAY
             - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-            # - CYCLONEDDS_URI=file:///root/ros2_ws/docker/cyclonedds_profile.xml
-            - ROS_DOMAIN_ID=100
+            # - CYCLONEDDS_URI=/root/ros2_ws/docker/cyclonedds_profile.xml
+            - ROS_DOMAIN_ID=XXX
             - TZ=Asia/Tokyo
         volumes:
             - ../:/root/ros2_ws
