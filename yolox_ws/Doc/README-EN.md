@@ -24,13 +24,12 @@ The configuration of the basic software used in this setup is as follows.
 
 | Item                         | Content                                                                            |
 | -----------------------------|------------------------------------------------------------------------------------|
-| OS                           | ![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-orange.svg)Ubuntu 22.04        |
-| ROS                          | ![ROS Version](https://img.shields.io/badge/ROS-Humble-brightgreen.svg)ROS2 Humble |
-| Configuration Environment    | Docker version 28.3.2, build 578ccf6                                               |
+| OS                           | Ubuntu 24.04        |
+| ROS                          | ROS2 Jazzy |
+| Configuration Environment    | Docker version 29.6.1, build 8900f1d                                               |
 | Operational Component        | Using hsrb_interface                                                               |
 | Object Recognition Module    | yolox ROS2 Implementation: https://github.com/Ar-Ray-code/YOLOX-ROS                |
 | Grasp Pose Estimation Module | grasp net ROS2 node(Provided by Toyota)                                            |
-| Simulator                    | Using Ignition Gazebo                                                              |
 
 <br><br>
 
@@ -38,33 +37,36 @@ The configuration of the basic software used in this setup is as follows.
 This software consists of the following directory structure and is intended to be executed within a Docker environment.
 
 ```
-/path/to/workspace
-├── Additional_src
-│   ├── Dependent_package_src.zip
-│   └── Graspnet_ros_src.zip
+pick_and_place_example/
+:
 └── yolox_ws
-    ├── check_grasp_result.sh
-    ├── play_movie.sh
-    ├── test_yolox_graspnet_ros.sh
-    ├── docker
-    │   ├── docker-compose.yaml
-    │   ├── Dockerfile
-    │   └── ros_entrypoint.sh
-    ├── doc
+    ├── Doc
+    │   ├── README-EN.md
     │   ├── README.md
-    │   └── result_yolox_graspnet.jpg
+    │   ├── yolox_ros_after.png
+    │   └── yolox_ros_before.png
+    ├── check_grasp_result.sh
+    ├── docker
+    │   ├── Dockerfile
+    │   ├── cyclonedds_profile.xml
+    │   ├── docker-compose.yaml
+    │   ├── entrypoint.sh
+    │   └── ros_entrypoint.sh
+    ├── play_movie.sh
     ├── src
-        ├── compressed_rgbd_msgs
-        ├── coordinate_transform_util_ros
-        ├── cv_bridge_util
-        ├── graspnetAPI
-        ├── graspnet-baseline
-        ├── graspnet_ros
-        ├── instance_segmentation_msgs
-        ├── yolox_bridge
-        ├── yolox_graspnet_meta
-        └── YOLOX-ROS
-
+    │   ├── YOLOX-ROS
+    │   ├── compressed_rgbd_msgs
+    │   ├── coordinate_transform_util_ros
+    │   ├── cv_bridge_util
+    │   ├── graspnet-baseline
+    │   ├── graspnetAPI
+    │   ├── graspnet_ros
+    │   ├── instance_segmentation_msgs
+    │   ├── yolox_bridge
+    │   ├── yolox_graspnet_meta
+    │   └── yolox_ros_launch
+    ├── start_yolox_graspnet_ros.sh
+    └── stop_yolox_graspnet_ros.sh
 ```
 
 
@@ -113,7 +115,7 @@ $ docker exec -it hsrb_pick_and_place bash
 root@computer:~/ros2_ws# ./trigger_gaze.sh
 ```
 
-### 4.3. Starting yolox_ros and graspnet_ros
+### 4.2. Starting yolox_ros and graspnet_ros
 By starting the following from a separate terminal, you can launch the object detection process using yolox_ros and the grasp pose estimation process using graspnet_ros. These processes cannot be stopped unless a stop command is executed.
 
 - Start Command
@@ -139,7 +141,7 @@ root@computer:~/ros2_ws# ~/ros2_ws/stop_yolox_graspnet_ros.sh
 
 ## 5. Operation on the Actual Machine
 
-Please refer to hsrb_pnp_ws/Docs/README-EN.md.
+Please refer to hsrb_pnp_ws/Doc/README-EN.md.
 
 # 6. Supplement
 ## Video Input via rosbag

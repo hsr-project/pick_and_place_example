@@ -5,9 +5,9 @@
 This repository contains two sets of files for Docker configuration.
 Please refer to the following for the usage of each.
 
-- hsrb_pnp_ws/Docs/README-EN.md
+- hsrb_pnp_ws/Doc/README-EN.md
 
-- yolox_ws/Docs/README-EN.md
+- yolox_ws/Doc/README-EN.md
 
 ## About the submodule
 
@@ -17,7 +17,7 @@ Since there are many related repositories, they are managed as submodules.
 
 When cloning this repository, execute git clone with the --recursive option in any desired location.
 ``` bash
-$ git clone --recursive git@github.com:hsr-project/pick_and_place_example.git
+$ git clone --recursive -b jazzy git@github.com:hsr-project/pick_and_place_example.git
 ```
 
 Please build in the following order.
@@ -37,7 +37,7 @@ $ cd /path/to/pick_and_place_example/hsrb_pnp_ws/docker
 $ docker compose build
 ```
 
-#### 2. Build and verify according to yolox_ws/Docs/README-EN.md.
-Please refer to yolox_ws/Docs/README-EN.md.
-#### 3. Build and verify according to hsrb_pnp_ws/Docs/README-EN.md.
-Please refer to hsrb_pnp_ws/Docs/README-EN.md.
+#### 2. Build and verify according to yolox_ws/Doc/README-EN.md.
+Please refer to yolox_ws/Doc/README-EN.md.
+#### 3. Build and verify according to hsrb_pnp_ws/Doc/README-EN.md.
+Please refer to hsrb_pnp_ws/Doc/README-EN.md.

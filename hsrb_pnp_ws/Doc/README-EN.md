@@ -29,9 +29,9 @@ The configuration of the basic software used in the setup is as follows.
 
 | Item                         | Content                                                                            |
 | -----------------------------|------------------------------------------------------------------------------------|
-| OS                           | ![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-orange.svg)Ubuntu 22.04        |
-| ROS                          | ![ROS Version](https://img.shields.io/badge/ROS-Humble-brightgreen.svg)ROS2 Humble |
-| Configuration Environment    | Docker version 28.3.2, build 578ccf6                                               |
+| OS                           | Ubuntu 24.04        |
+| ROS                          | ROS2 Jazzy |
+| Configuration Environment    | Docker version 29.6.1, build 8900f1d                                               |
 | Operational Component        | Using hsrb_interface                                                               |
 | Object Recognition Module    | yolox ROS2 Implementation: https://github.com/Ar-Ray-code/YOLOX-ROS                |
 | Grasp Pose Estimation Module | grasp net ROS2 node(Provided by Toyota)                                            |
@@ -44,84 +44,63 @@ The configuration of the basic software used in the setup is as follows.
 
 
 ```
-~/pick_and_place_example
-|
-hsrb_pnp_ws/
-|   ├── docker
-|   |   ├── docker-compose.yaml
-|   |   └──  Dockerfile
-|   ├── src/
-|       ├── hsr_repos_ignition_humble/      # Main HSR-B packages
-|       │   ├── csm/                        # Scan matching library
-|       │   ├── dynpick_driver/             # Force sensor driver
-|       │   ├── exxx_control_table/         # Control table
-|       │   ├── gazebo_ros2_control/        # Gazebo ROS 2 control
-|       │   ├── graspnet_ros/               # Graspnet
-|       │   ├── gz_ros2_control/            # Gazebo ignition ros2 control
-|       │   ├── hsrb_common/                # Common HSR-B packages
-|       │   ├── hsrb_control/               # Control packages
-|       │   ├── hsrb_controllers/           # Robot controllers
-|       │   ├── hsrb_drivers/               # Hardware drivers
-|       │   ├── hsrb_interfaces/            # Interface definitions
-|       │   ├── hsrb_launch/                # Launch files
-|       │   ├── hsrb_manipulation/          # Manipulation packages
-|       │   ├── hsrb_monitor/               # System monitoring
-|       │   ├── hsrb_moveit/                # MoveIt integration
-|       │   ├── hsrb_robot/                 # Robot description
-|       │   ├── hsrb_rosnav/                # Navigation integration
-|       │   ├── hsrb_simulator/             # Simulation environment
-|       │   ├── hsrb_teleop/                # Teleoperation packages
-|       │   ├── hsr_common/                 # Common HSR packages
-|       │   ├── ros2_laser_scan_matcher/    # Laser scan matching
-|       │   ├── tmc_common/                 # Common TMC packages
-|       │   ├── tmc_common_msgs/            # Common message definitions
-|       │   ├── tmc_database/               # Database integration
-|       │   ├── tmc_dev_tools/              # Development tools
-|       │   ├── tmc_drivers/                # Hardware drivers
-|       │   ├── tmc_gazebo/                 # Gazebo integration
-|       │   ├── tmc_manipulation/           # Manipulation libraries
-|       │   ├── tmc_manipulation_base/      # Base manipulation
-|       │   ├── tmc_manipulation_planner/   # Motion planning
-|       │   ├── tmc_navigation/             # Navigation stack
-|       │   ├── tmc_realtime_control/       # Real-time control
-|       │   ├── tmc_teleop/                 # Teleoperation libraries
-|       │   └── tmc_voice/                  # Voice recognition/synthesis
-|       └── hsrb_pnp_okgs
-|            ├── hsrb_pick_and_place/        # Pick and place functionality
-|            └── hsrb_pnp_msgs/              # Pick and place msgs
-```
-
-<div style="page-break-before:always"></div>
-<br>
-
-```
-~/pick_and_place_example
-|
-|  -------- See separate document (yolox_ws/doc/README-EN.md) for details. -------------------------------------------------
-└── yolox_ws
-|   ├── check_grasp_result.sh           # Check script for graspnet's results
-|   ├── play_movie.sh                   # Sample image scequence playing script for test
-|   ├── start_yolox_graspnet_ros.sh     # Start script for yolox and graspnet
-|   ├── docker
-|   │   ├── docker-compose.yaml
-|   │   ├── Dockerfile
-|   │   └── ros_entrypoint.sh
-|   ├── Images
-|   │   └── rosbag2_one_phone_standing_up.zip
-|   ├── Doc
-|   │   ├── README.md
-|   │   └── result_yolox_graspnet.jpg
-|   ├── src
-|       ├── compressed_rgbd_msgs
-|       ├── coordinate_transform_util_ros
-|       ├── cv_bridge_util
-|       ├── graspnetAPI
-|       ├── graspnet-baseline
-|       ├── graspnet_ros
-|       ├── instance_segmentation_msgs
-|       ├── yolox_bridge
-|       ├── yolox_graspnet_meta
-|       └── YOLOX-ROS
+pick_and_place_example/
+:
+├── hsrb_pnp_ws
+│   ├── Doc
+│   │   ├── Gazebo.png
+│   │   ├── README-EN.md
+│   │   ├── README.md
+│   │   ├── RViz.png
+│   │   ├── accessing_opening_gripper.png
+│   │   ├── grip_object.png
+│   │   ├── place_object.png
+│   │   └── trigar_gaze.png
+│   ├── docker
+│   │   ├── Dockerfile
+│   │   ├── cyclonedds_profile.xml
+│   │   └── docker-compose.yaml
+│   ├── launch_hsrb_pnp_ignition_gz.sh
+│   ├── src
+│   │   ├── hsr_repos_ignition_jazzy
+│   │   │   ├── csm
+│   │   │   ├── dynpick_driver
+│   │   │   ├── exxx_control_table
+│   │   │   ├── graspnet_ros
+│   │   │   ├── hsr_common
+│   │   │   ├── hsrb_common
+│   │   │   ├── hsrb_control
+│   │   │   ├── hsrb_controllers
+│   │   │   ├── hsrb_drivers
+│   │   │   ├── hsrb_interfaces
+│   │   │   ├── hsrb_launch
+│   │   │   ├── hsrb_manipulation
+│   │   │   ├── hsrb_monitor
+│   │   │   ├── hsrb_moveit
+│   │   │   ├── hsrb_robot
+│   │   │   ├── hsrb_rosnav
+│   │   │   ├── hsrb_simulator
+│   │   │   ├── hsrb_teleop
+│   │   │   ├── ros2_laser_scan_matcher
+│   │   │   ├── tmc_common
+│   │   │   ├── tmc_common_msgs
+│   │   │   ├── tmc_database
+│   │   │   ├── tmc_drivers
+│   │   │   ├── tmc_gazebo
+│   │   │   ├── tmc_manipulation
+│   │   │   ├── tmc_manipulation_base
+│   │   │   ├── tmc_manipulation_planner
+│   │   │   ├── tmc_navigation
+│   │   │   ├── tmc_realtime_control
+│   │   │   ├── tmc_teleop
+│   │   │   └── tmc_voice
+│   │   └── hsrb_pnp_pkgs
+│   │       ├── hsrb_pick_and_place
+│   │       └── hsrb_pnp_msgs
+│   ├── start_hsrb_pick_and_place.sh
+│   ├── trigger_gaze.sh
+│   └── trigger_pnp.sh
+:
 ```
 
 
@@ -173,7 +152,6 @@ On terminal 2, please execute the following.
 ``` bash
 $ docker exec -it yolox_ros_onnx_graspnet bash
 root@computer:~/ros2_ws# cd /workdir
-root@computer:/workdir# source ./install/setup.bash
 root@computer:/workdir# ~/ros2_ws/start_yolox_graspnet_ros.sh
 ```
 
@@ -272,172 +250,38 @@ hsrb@computer:~/workdir$ ros2 service call /graspnet_pose_adjust std_srvs/srv/Se
 
 ## 6. Operation Method on the Actual Machine
 
-Configure cyclonedds to enable communication with the robot.
+First, on the HSR internal PC, set the IP address of the development PC in the Peer Address field of `/etc/opt/tmc/robot/cyclonedds_profile.xml` .
 
-On the HSR’s internal PC, configure the `/etc/opt/tmc/robot/cyclonedds_profile.xml` file.
+Example: **\<Peer Address="192.168.123.456"\/\>**
 
-The template for the file is as follows.
-
-* In line 4, please remove NetworkInterfaceAddress for HSR-C.
-* For the Peer Address, set the IP address of the PC that will communicate with the robot (hereafter referred to as the remote PC).
-
-```bash
-<CycloneDDS>
-  <Domain>
-    <General>
-      <NetworkInterfaceAddress>wlp3s0</NetworkInterfaceAddress>
-      <AllowMulticast>false</AllowMulticast>
-      <EnableMulticastLoopback>false</EnableMulticastLoopback>
-      <MaxMessageSize>65500B</MaxMessageSize>
-    </General>
-    <Discovery>
-      <ParticipantIndex>auto</ParticipantIndex>
-      <MaxAutoParticipantIndex>100</MaxAutoParticipantIndex>
-      <Peers>
-        <Peer Address="xxx.xxx.xxx.xxx"/>
-        <Peer Address="localhost"/>
-      </Peers>
-    </Discovery>
-  </Domain>
-</CycloneDDS>
-```
-
-Next, configure cyclonedds on the remote PC.
-
-First, configure the following two files.
+Next, on the development PC, configure Cyclone DDS in the workspace.
+Modify each configuration file.
 
 * yolox_ws/docker/cyclonedds_profile.xml
 * hsrb_pnp_ws/docker/cyclonedds_profile.xml
 
-The template for the file is as follows.
+  Replace **\<Peer Address="XXX.XXX.XXX.XXX"\/\>** with the IP address of the HSR internal PC.
 
-* For the Peer Address, set the IP address of the HSR with which you will communicate.
-
-```bash
-<CycloneDDS>
-  <Domain>
-    <General>
-      <AllowMulticast>false</AllowMulticast>
-      <EnableMulticastLoopback>false</EnableMulticastLoopback>
-      <MaxMessageSize>65500B</MaxMessageSize>
-    </General>
-    <Discovery>
-      <ParticipantIndex>auto</ParticipantIndex>
-      <MaxAutoParticipantIndex>100</MaxAutoParticipantIndex>
-      <Peers>
-        <Peer Address="xxx.xxx.xxx.xxx"/>
-        <Peer Address="localhost"/>
-      </Peers>
-    </Discovery>
-  </Domain>
-</CycloneDDS>
-```
-
-Next, configure the following file.
+  * Example: **\<Peer Address="192.168.456.789"\/\>**
 
 * yolox_ws/docker/docker-compose.yaml
-
-Make the following changes, and set the ROS_DOMAIN_ID according to your environment.
-
-```bash
-#version: '3.4'
-services:
-    yolox_ros_onnx_graspnet:
-        container_name: yolox_ros_onnx_graspnet
-        privileged: true
-        build:
-            # context: .
-            context: ..
-            dockerfile: docker/Dockerfile
-            args:
-                - BASE_TAG=11.8.0-cudnn8-devel-ubuntu22.04
-        image: yolox_ros_onnx_graspnet:latest
-        network_mode: host
-        runtime: nvidia
-        environment:
-            - DISPLAY=$DISPLAY
-            - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-            - CYCLONEDDS_URI=file:///root/ros2_ws/docker/cyclonedds_profile.xml
-            - ROS_DOMAIN_ID=XXX
-            - TZ=Asia/Tokyo
-        volumes:
-            - ../:/root/ros2_ws
-            - /tmp/.X11-unix:/tmp/.X11-unix
-        devices:
-            - "/dev/video0:/dev/video0"
-        working_dir: /root/ros2_ws
-        tty: true
-        command: bash
-```
-
 * hsrb_pnp_ws/docker/docker-compose.yaml
 
-Similarly, set the ROS_DOMAIN_ID according to your environment.
+  Set ROS_DOMAIN_ID according to your environment.
 
-```bash
-services:
-    hsrb_pick_and_place:
-        container_name: hsrb_pick_and_place
-        privileged: true
-        build:
-            context: ..
-            dockerfile: docker/Dockerfile   # added
-        image: hsrb_pick_and_place:latest
-        network_mode: host
-        runtime: nvidia
-        environment:
-            - DISPLAY=$DISPLAY
-            - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-            - CYCLONEDDS_URI=file:///home/hsrb/ros2_ws/docker/cyclonedds_profile.xml
-            - ROS_DOMAIN_ID=XXX
-            - IGN_GAZEBO_RESOURCE_PATH=/workdir/src/hsrb_pnp_pkgs/hsrb_pick_and_place/models/
-        volumes:
-            - ../:/home/hsrb/ros2_ws
-            - /tmp/.X11-unix:/tmp/.X11-unix
-        devices:
-            - "/dev/video0:/dev/video0"
-        working_dir: /home/hsrb/ros2_ws
-        tty: true
-        command: bash
-```
-
-For the actual machine, modify the parameters and topic names.
-
-* yolox_ws/start_yolox_graspnet_ros.sh
-
-```bash
-#! /bin/bash
-
-source ./install/setup.bash
-ros2 launch yolox_ros_launch yolox_onnxruntime_without_camera.launch.py src_image_topic_name:=/head_rgbd_sensor/rgb/image_rect_color &
-# ros2 launch yolox_bridge yolox_bridge.launch.py depth_topic:=/head_rgbd_sensor/image/compressedDepth  &
-ros2 launch yolox_bridge yolox_bridge.launch.py depth_topic:=/head_rgbd_sensor/depth_registered/image_rect_raw/compressedDepth &
-ros2 launch graspnet_ros_launch grasp_detector.launch.py input_topic:=/yolox_bridge/result &
-```
+For the physical robot, modify the execution command.
 
 * hsrb_pnp_ws/start_hsrb_pick_and_place.sh
 
-```bash
-#! /bin/bash
+  ```bash
+  #! /bin/bash
 
-# Run the pick and place system
-# cd /workdir; source ./install/setup.bash ; ros2 run hsrb_pick_and_place hsrb_pick_and_place --ros-args -p use_sim_time:=True
-cd /workdir; source ./install/setup.bash ; ros2 run hsrb_pick_and_place hsrb_pick_and_place --ros-args -p world_frame_id:=map -p use_sim_time:=False
-```
+  # Run the pick and place system
+  # cd /workdir; source ./install/setup.bash ; ros2 run hsrb_pick_and_place hsrb_pick_and_place --ros-args -p use_sim_time:=True
+  cd /workdir; source ./install/setup.bash ; ros2 run hsrb_pick_and_place hsrb_pick_and_place --ros-args -p world_frame_id:=map -p use_sim_time:=False
+  ```
 
-Once the configuration is complete, recreate the container.
-
-Execute the following to build.
-
-```bash
-$ cd /path/to/pick_and_place_example/yolox_ws/docker
-$ docker compose build
-
-$ cd /path/to/pick_and_place_example/hsrb_pnp_ws/docker
-$ docker compose build
-```
-
-After the build is complete, start the container.
+Once the configuration is complete, restart the container.
 
 ```bash
 $ cd /path/to/pick_and_place_example/hsrb_pnp_ws/docker
@@ -448,24 +292,23 @@ $ docker compose up -d
 ```
 
 
-After releasing the emergency stop and confirming that the HSR has started, execute the following on terminal 1 (remote PC).
+After releasing the emergency stop and confirming that the HSR has started, execute the following on terminal 1 (the development PC).
 
 ```bash
 $ xhost +
 $ docker exec -it yolox_ros_onnx_graspnet bash
 $ cd /workdir
-$ source ./install/setup.bash
 $ ~/ros2_ws/start_yolox_graspnet_ros.sh
 ```
 
-On terminal 2 (remote PC), please execute the following.
+On terminal 2 (the development PC), please execute the following.
 
 ```bash
 $ docker exec -it hsrb_pick_and_place bash
 $ ./start_hsrb_pick_and_place.sh
 ```
 
-On terminal 3 (remote PC), please execute the following.
+On terminal 3 (the development PC), please execute the following.
 
 ```bash
 $ docker exec -it hsrb_pick_and_place bash
@@ -477,7 +320,7 @@ Adjust the `pos` in `hsrb_pnp_ws/trigger_gaze.sh` as needed to ensure the target
 The parameter given as `"{pos: [0.5, 0.12, 0.75]}"` represents the 3D coordinates in the world coordinate system of the robot’s base_link, with the unit in meters.
 
 
-On terminal 4 (remote PC), please execute the following.
+On terminal 4 (the development PC), please execute the following.
 
 ```bash
 $ docker exec -it hsrb_pick_and_place bash
@@ -497,7 +340,7 @@ Example `"{pos: [0.6, -0.28, 0.608, 0.175, 0.0, 0.0]}"`
 
 If the system does not operate properly, adjust the parameters in the following file or modify the position of the target object as needed.
 
-* /path/to/pick_and_place_example/hsrb_pnp_ws/src/hsr_repos_ignition_humble/graspnet_ros/graspnet_ros_node/graspnet_ros_node/parameters.yaml
+* /path/to/pick_and_place_example/hsrb_pnp_ws/src/hsr_repos_ignition_jazzy/graspnet_ros/graspnet_ros_node/graspnet_ros_node/parameters.yaml
 
 Parameters to Adjust
 

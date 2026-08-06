@@ -24,11 +24,11 @@
 
 | 項目                   | 内容                                                      |
 | ---------------------- | --------------------------------------------------------- |
-| OS                     | Ubuntu 22.04                                              |
-| ROS                    | ROS2 Humble                                               |
-| 構成環境               | Docker version 28.3.2, build 578ccf6                      |
+| OS                     | Ubuntu 24.04                                              |
+| ROS                    | ROS2 Jazzy                                               |
+| 構成環境               | Docker version 29.6.1, build 8900f1d                      |
 | 物体認識用モジュール   | yolox ROS2 実装: https://github.com/Ar-Ray-code/YOLOX-ROS |
-| 把持姿勢推論モジュール | grasp net ROS2 ノード(トヨタ提供)                         |
+| 把持姿勢推論モジュール | graspnet ROS2 ノード(トヨタ提供)                         |
 
 <br><br>
 
@@ -36,33 +36,36 @@
 本ソフトウェアは以下ディレクトリ構成からなり、Docker環境内での実行を想定しています。
 
 ```
-/path/to/workspace
-├── Additional_src
-│   ├── Dependent_package_src.zip
-│   └── Graspnet_ros_src.zip
+pick_and_place_example/
+:
 └── yolox_ws
-    ├── check_grasp_result.sh
-    ├── play_movie.sh
-    ├── test_yolox_graspnet_ros.sh
-    ├── docker
-    │   ├── docker-compose.yaml
-    │   ├── Dockerfile
-    │   └── ros_entrypoint.sh
-    ├── doc
+    ├── Doc
+    │   ├── README-EN.md
     │   ├── README.md
-    │   └── result_yolox_graspnet.jpg
+    │   ├── yolox_ros_after.png
+    │   └── yolox_ros_before.png
+    ├── check_grasp_result.sh
+    ├── docker
+    │   ├── Dockerfile
+    │   ├── cyclonedds_profile.xml
+    │   ├── docker-compose.yaml
+    │   ├── entrypoint.sh
+    │   └── ros_entrypoint.sh
+    ├── play_movie.sh
     ├── src
-        ├── compressed_rgbd_msgs
-        ├── coordinate_transform_util_ros
-        ├── cv_bridge_util
-        ├── graspnetAPI
-        ├── graspnet-baseline
-        ├── graspnet_ros
-        ├── instance_segmentation_msgs
-        ├── yolox_bridge
-        ├── yolox_graspnet_meta
-        └── YOLOX-ROS
-
+    │   ├── YOLOX-ROS
+    │   ├── compressed_rgbd_msgs
+    │   ├── coordinate_transform_util_ros
+    │   ├── cv_bridge_util
+    │   ├── graspnet-baseline
+    │   ├── graspnetAPI
+    │   ├── graspnet_ros
+    │   ├── instance_segmentation_msgs
+    │   ├── yolox_bridge
+    │   ├── yolox_graspnet_meta
+    │   └── yolox_ros_launch
+    ├── start_yolox_graspnet_ros.sh
+    └── stop_yolox_graspnet_ros.sh
 ```
 
 
@@ -92,7 +95,7 @@ $ docker compose up -d
 ### 4.1. hsrb_pick_and_placeでシミュレータの起動
 本節以下で行うros2コマンドのなかに、シミュレータを起動していないと正常に動作しないものがあるため、それぞれ別端末で、hsrb_pick_and_placeでシミュレータの起動を行います。
 
-HSR/ROS2 pick & Place用コンテナの起動
+HSR/ROS2 Pick & Place 用コンテナの起動
 
 ``` bash
 $ cd /path/to/pick_and_place_example/hsrb_pnp_ws/docker
@@ -111,7 +114,7 @@ $ docker exec -it hsrb_pick_and_place bash
 root@computer:~/ros2_ws# ./trigger_gaze.sh
 ```
 
-### 4.3. yolox_ros、graspnet_rosの起動
+### 4.2. yolox_ros、graspnet_rosの起動
 以下を別端末から起動することで、yolox_rosによる画像中からの対象物検出プロセス、およびgraspnet_rosによる把持姿勢推定プロセスを起動することができます。停止コマンドを実行しなければ停止させることができません。
 
 - 起動コマンド
@@ -137,7 +140,7 @@ root@computer:~/ros2_ws# ~/ros2_ws/stop_yolox_graspnet_ros.sh
 
 ## 5. 実機での動作について
 
-hsrb_pnp_ws/Docs/README.mdを参照してください。
+hsrb_pnp_ws/Doc/README.mdを参照してください。
 
 # 6. 補足
 ## rosbagによる映像入力
