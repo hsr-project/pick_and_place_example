@@ -112,11 +112,6 @@ ENV TORCH_CUDA_ARCH_LIST="7.5;8.0;8.6;8.9;9.0"
 RUN cd /workdir/src/graspnet-baseline && \
     python3 -m pip install --ignore-installed -r requirements.txt
 
-RUN python3 -m pip install --force-reinstall \
-      "numpy==1.26.4" \
-      "scipy==1.11.4" \
-      "scikit-learn==1.4.2"
-
 RUN source "/root/.bashrc" && \
     cd /workdir/src/graspnet-baseline/pointnet2 && \
     python3 setup.py install
@@ -130,6 +125,11 @@ ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
 RUN source "/root/.bashrc" && \
     cd src/graspnetAPI && \
     python3 -m pip install .
+
+RUN python3 -m pip install --force-reinstall \
+      "numpy==1.26.4" \
+      "scipy==1.11.4" \
+      "scikit-learn==1.4.2"
 
 RUN source "/opt/ros/jazzy/setup.bash" && \
     colcon build --packages-select coordinate_transform_util_ros && \
